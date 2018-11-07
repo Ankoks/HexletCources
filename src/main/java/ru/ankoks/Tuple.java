@@ -4,26 +4,21 @@ package ru.ankoks;
  * User: ankoks
  * Date: 06.11.2018
  */
+public class Tuple<T> {
+    private final T left;
 
-/**
- * Пара ключ-значения. Простой иммьютабл объект
- * Проблемы:
- */
-public class Tuple {
-    private final Object left;
+    private final T right;
 
-    private final Object right;
-
-    public Tuple(Object left, Object right) {
+    public Tuple(final T left, final T right) {
         this.left = left;
         this.right = right;
     }
 
-    public Object getLeft() {
+    public T getLeft() {
         return left;
     }
 
-    public Object getRight() {
+    public T getRight() {
         return right;
     }
 }

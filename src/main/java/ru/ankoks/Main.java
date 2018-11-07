@@ -7,10 +7,7 @@ package ru.ankoks;
 public class Main {
 
     public static void main(String[] args) {
-        final Tuple student1 = new Tuple(1, "Anton");
+        StringTuple st = new StringTuple("left", "right");
 
-        final String name = (String) student1.getRight();
-
-        System.out.println(name);
     }
 }
