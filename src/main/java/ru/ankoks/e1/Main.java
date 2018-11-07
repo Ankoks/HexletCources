@@ -1,7 +1,4 @@
-package ru.ankoks;
-
-import ru.ankoks.e1.StringTuple;
-import ru.ankoks.e1.Tuple;
+package ru.ankoks.e1;
 
 /**
  * User: ankoks
