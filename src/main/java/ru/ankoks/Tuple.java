@@ -5,6 +5,7 @@ package ru.ankoks;
  * Date: 06.11.2018
  */
 public class Tuple<T> {
+
     private final T left;
 
     private final T right;
