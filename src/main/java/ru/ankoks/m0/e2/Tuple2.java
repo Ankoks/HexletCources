@@ -1,16 +1,15 @@
-package ru.ankoks.e3;
+package ru.ankoks.m0.e2;
 
 /**
  * User: ankoks
  * Date: 07.11.2018
  */
-public class Tuple3<T1, T2> {
+public class Tuple2<T1, T2> {
 
-    private final T1 left;
+    private T1 left;
+    private T2 right;
 
-    private final T2 right;
-
-    public Tuple3(final T1 left, final T2 right) {
+    public Tuple2(T1 left, T2 right) {
         this.left = left;
         this.right = right;
     }

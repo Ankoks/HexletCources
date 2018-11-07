@@ -1,4 +1,4 @@
-package ru.ankoks.e1;
+package ru.ankoks.m0.e1;
 
 /**
  * User: ankoks
