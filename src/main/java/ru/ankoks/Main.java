@@ -1,5 +1,8 @@
 package ru.ankoks;
 
+import ru.ankoks.e1.StringTuple;
+import ru.ankoks.e1.Tuple;
+
 /**
  * User: ankoks
  * Date: 06.11.2018
