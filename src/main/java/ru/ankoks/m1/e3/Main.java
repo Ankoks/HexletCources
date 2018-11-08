@@ -15,8 +15,8 @@ public class Main {
         list.add(2);
         list.add(3);
 
-        CollectionsHelper<String> helper = new CollectionsHelper<>();
+        CollectionsHelper helper = new CollectionsHelper();
 
-        System.out.println(helper.findIndex(list, "sdfa"));
+        System.out.println(helper.findIndex(list, "asd"));
     }
 }
