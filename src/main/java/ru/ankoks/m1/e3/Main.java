@@ -15,8 +15,6 @@ public class Main {
         list.add(2);
         list.add(3);
 
-        CollectionsHelper helper = new CollectionsHelper();
-
-        System.out.println(helper.findIndex(list, "asd"));
+        System.out.println(CollectionsHelper.findIndex(list, "asd"));
     }
 }
