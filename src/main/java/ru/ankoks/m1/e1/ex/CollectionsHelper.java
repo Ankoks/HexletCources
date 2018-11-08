@@ -23,7 +23,7 @@ public class CollectionsHelper<T extends Human> {
     }
 
     public static void main(String[] args) {
-        List<Human> mans = new ArrayList<Human>(){
+        List<Human> mans = new ArrayList<Human>() {
             {
                 add(new Man("Slava"));
                 add(new Man("Klod"));
