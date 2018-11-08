@@ -9,12 +9,12 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        final List list = new ArrayList();
+        final List<String> list = new ArrayList<>();
 
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        list.add("1");
+        list.add("2");
+        list.add("3");
 
-        System.out.println(CollectionsHelper.findIndex(list, "asd"));
+        System.out.println(CollectionsHelper.findIndex(list, "3"));
     }
 }
