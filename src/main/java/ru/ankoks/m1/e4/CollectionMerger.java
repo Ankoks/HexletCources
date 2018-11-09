@@ -1,7 +1,5 @@
 package ru.ankoks.m1.e4;
 
-import com.sun.org.apache.xerces.internal.impl.dv.xs.AnyURIDV;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +9,8 @@ import java.util.List;
  */
 public class CollectionMerger {
 
-    public static <T, L extends T, R extends T> List<T> merge(final List<L> left, final  List<R> right) {
+    // ? - wildcard - неизвестный тип
+    public static <T> List<T> merge(final List<? extends T> left, final  List<? extends T> right) {
         final List<T> result = new ArrayList<>();
 
         result.addAll(left);
