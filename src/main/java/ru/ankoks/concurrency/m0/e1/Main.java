@@ -15,7 +15,7 @@ public class Main {
 
         TextLoaderRunnable runnableThread = new TextLoaderRunnable(new MockLoader("thread2"));
         runnableThread.run();
-        new Thread(runnableThread).start();
+        new Thread(new Thread()).start();
 
         final long after = System.currentTimeMillis();
 
