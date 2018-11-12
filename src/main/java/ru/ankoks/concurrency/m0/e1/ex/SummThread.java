@@ -1,12 +1,10 @@
 package ru.ankoks.concurrency.m0.e1.ex;
 
-import java.util.Arrays;
-
 /**
  * User: ankoks
  * Date: 12.11.2018
  */
-class SummThread extends Thread {
+public class SummThread extends Thread {
     final int[] toSumm;
     private int summ;
 
