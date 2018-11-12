@@ -1,5 +1,7 @@
 package ru.ankoks.concurrency.m0.e1.ex;
 
+import java.util.Arrays;
+
 /**
  * User: ankoks
  * Date: 12.11.2018
@@ -13,8 +15,10 @@ class SummThread extends Thread {
     }
 
     public int getResult() {
-        for (int i = 0; i < toSumm.length; i++) {
-            summ += toSumm[i];
+//        Arrays.stream(toSumm).sum();
+
+        for (int aToSumm : toSumm) {
+            summ += aToSumm;
         }
 
         return summ;
