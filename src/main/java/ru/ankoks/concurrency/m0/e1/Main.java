@@ -10,8 +10,12 @@ public class Main {
     public static void main(String[] args) {
         final long before = System.currentTimeMillis();
 
-        final Thread loader = new TextLoaderThread(new MockLoader("thread1"));
-        loader.start();
+//        final Thread loader = new TextLoaderThread(new MockLoader("thread1"));
+//        loader.start();
+
+        TextLoaderRunnable runnableThread = new TextLoaderRunnable(new MockLoader("thread2"));
+        runnableThread.run();
+        new Thread(runnableThread).start();
 
         final long after = System.currentTimeMillis();
 
