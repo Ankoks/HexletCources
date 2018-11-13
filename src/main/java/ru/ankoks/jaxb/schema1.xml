@@ -1,0 +1,5 @@
+<customer id="3">
+  <age>3</age>
+  <!--Optional:-->
+  <name>string</name>
+</customer>
