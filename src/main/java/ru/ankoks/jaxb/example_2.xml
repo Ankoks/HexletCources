@@ -1,0 +1,14 @@
+<customers>
+    <customer id="1">
+        <age>1</age>
+        <name>string</name>
+    </customer>
+    <customer id="2">
+        <age>2</age>
+        <name>string</name>
+    </customer>
+    <customer id="3">
+        <age>3</age>
+        <name>string</name>
+    </customer>
+</customers>
