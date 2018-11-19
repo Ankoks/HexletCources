@@ -20,7 +20,7 @@ public class XOField {
         }
     }
 
-    public void serFigure(final int x, final int y, final Figure figure) {
+    public void setFigure(final int x, final int y, final Figure figure) {
         figures[x][y] = figure;
     }
 

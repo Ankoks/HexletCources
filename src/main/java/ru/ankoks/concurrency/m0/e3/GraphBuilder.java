@@ -22,7 +22,7 @@ public class GraphBuilder {
                     continue;
                 }
                 final XOField newField = new XOField(currentField);
-                newField.serFigure(x, y, nextFigure);
+                newField.setFigure(x, y, nextFigure);
                 children.add(build(nextFigure, newField));
             }
         }

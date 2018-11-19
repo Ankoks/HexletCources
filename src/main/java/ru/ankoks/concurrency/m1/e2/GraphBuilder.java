@@ -31,7 +31,7 @@ public class GraphBuilder {
                     continue;
                 }
                 final XOField newField = new XOField(currentField);
-                newField.serFigure(x, y, nextFigure);
+                newField.setFigure(x, y, nextFigure);
 
                 final Future<?> future = EXECUTOR_SERVICE.submit(new Runnable() {
                     @Override
