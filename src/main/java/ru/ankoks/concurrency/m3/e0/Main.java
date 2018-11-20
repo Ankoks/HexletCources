@@ -1,5 +1,9 @@
 package ru.ankoks.concurrency.m3.e0;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
+
 /**
  * User: ankoks
  * Date: 20.11.2018
@@ -42,5 +46,11 @@ public class Main {
         t2.join();
 
         System.out.printf("Size: %d", intList.getSize());
+
+
+    }
+    private Map<Object, Object> map = new HashMap<>();
+    public Object random() {
+        return map.keySet().toArray()[new Random().nextInt(map.size())];
     }
 }
