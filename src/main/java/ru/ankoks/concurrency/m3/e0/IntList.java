@@ -12,7 +12,7 @@ public class IntList {
         return size;
     }
 
-    public void add(int element) {
+    public synchronized void add(int element) {
         if (data.length == size) {
             int[] newData = new int[data.length * 2 + 1];
             System.arraycopy(data, 0, newData, 0, data.length);
