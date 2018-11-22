@@ -7,7 +7,7 @@ import java.util.Iterator;
  * User: ankoks
  * Date: 22.11.2018
  */
-public class ArrayColletion<T> implements Collection<T> {
+public class ArrayCollection<T> implements Collection<T> {
 
     private T[] m = (T[]) new Object[1];
 
@@ -118,12 +118,12 @@ public class ArrayColletion<T> implements Collection<T> {
 
         @Override
         public boolean hasNext() {
-            return ArrayColletion.this.size() > size;
+            return ArrayCollection.this.size() > size;
         }
 
         @Override
         public T next() {
-            return ArrayColletion.this.m[size++];
+            return ArrayCollection.this.m[size++];
         }
 
     }
