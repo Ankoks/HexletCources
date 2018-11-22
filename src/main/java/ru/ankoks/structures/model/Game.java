@@ -1,9 +1,7 @@
 package ru.ankoks.structures.model;
 
 
-import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
 public class Game implements Iterable<Player> {
 
@@ -35,8 +33,23 @@ public class Game implements Iterable<Player> {
 
     @Override
     public Iterator<Player> iterator() {
-        final List<Player> playersList = Arrays.asList(players);
-        return playersList.iterator();
+//        final List<Player> playersList = Arrays.asList(players);
+//        return playersList.iterator();
+
+        return new PlayerIterator();
     }
 
+    private class PlayerIterator implements Iterator<Player>{
+        private int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            return Game.this.players.length > index;
+        }
+
+        @Override
+        public Player next() {
+            return Game.this.players[index++];
+        }
+    }
 }
