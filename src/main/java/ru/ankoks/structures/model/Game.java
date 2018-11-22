@@ -36,20 +36,26 @@ public class Game implements Iterable<Player> {
 //        final List<Player> playersList = Arrays.asList(players);
 //        return playersList.iterator();
 
-        return new PlayerIterator();
+        return new PlayerIterator(players);
     }
 
-    private class PlayerIterator implements Iterator<Player>{
+    private static class PlayerIterator implements Iterator<Player>{
         private int index = 0;
+
+        private final Player[] players;
+
+        private PlayerIterator(Player[] players) {
+            this.players = players;
+        }
 
         @Override
         public boolean hasNext() {
-            return Game.this.players.length > index;
+            return players.length > index;
         }
 
         @Override
         public Player next() {
-            return Game.this.players[index++];
+            return players[index++];
         }
     }
 }
