@@ -5,11 +5,9 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
+import ru.ankoks.other.parse.Parser;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -17,9 +15,63 @@ import java.util.List;
  * Date: 23.11.2018
  */
 public class CreateParagraph {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 //        saveWord(readWord());
-        readDocFile("example.docx");
+        readDocFile2();
+//        convertToPdf();
+    }
+
+    private static void convertToPdf() throws IOException {
+        String inputFile = "output.docx";
+        String outputFile = "output.pdf";
+        System.out.println("inputFile:" + inputFile + ",outputFile:" + outputFile);
+        FileInputStream in = new FileInputStream(inputFile);
+        XWPFDocument document = new XWPFDocument(in);
+        File outFile = new File(outputFile);
+        OutputStream out = new FileOutputStream(outFile);
+//        PdfOptions options = null;
+//        PdfConverter.getInstance().convert(document, out, options);
+    }
+
+    private static void readDocFile2() {
+        String templateName = "templates/KP_type_1.docx";
+        InputStream resourceAsStream = Parser.class.getClassLoader().getResourceAsStream(templateName);
+
+        try {
+            XWPFDocument document = new XWPFDocument(resourceAsStream);
+
+            List<XWPFParagraph> paragraphs = document.getParagraphs();
+
+            System.out.println("Total of paragraph " + paragraphs.size());
+            String[] searchList = {
+                    "[Name]",
+                    "[PartnerPositionSign]"};
+            String[] replacementList = {
+                    "123",
+                    "321"};
+
+            for (XWPFParagraph p : paragraphs) {
+//                System.out.println(p.getText());
+
+//                System.out.println(StringUtils.replaceEach(p.getText(), searchList, replacementList));
+
+                List<XWPFRun> runs = p.getRuns();
+                if (runs != null) {
+                    for (XWPFRun r : runs) {
+                        String text = r.getText(0);
+//                        r.setText(StringUtils.replaceEach(text, searchList, replacementList), 0);
+//                        if (text != null && text.contains("needle")) {
+//                            text = text.replace("needle", "haystack");
+//                        }
+                    }
+                }
+            }
+            document.write(new FileOutputStream("output.docx"));
+            resourceAsStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     private static void readDocFile(String fileName) {
@@ -32,7 +84,7 @@ public class CreateParagraph {
 
             List<XWPFParagraph> paragraphs = document.getParagraphs();
 
-            System.out.println("Total no of paragraph "+paragraphs.size());
+            System.out.println("Total of paragraph " + paragraphs.size());
             for (XWPFParagraph para : paragraphs) {
                 System.out.println(para.getText());
             }
