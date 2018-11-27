@@ -1,5 +1,6 @@
 package ru.ankoks.other.word;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.openxml4j.opc.OPCPackage;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
@@ -15,22 +16,9 @@ import java.util.List;
  * Date: 23.11.2018
  */
 public class CreateParagraph {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 //        saveWord(readWord());
         readDocFile2();
-//        convertToPdf();
-    }
-
-    private static void convertToPdf() throws IOException {
-        String inputFile = "output.docx";
-        String outputFile = "output.pdf";
-        System.out.println("inputFile:" + inputFile + ",outputFile:" + outputFile);
-        FileInputStream in = new FileInputStream(inputFile);
-        XWPFDocument document = new XWPFDocument(in);
-        File outFile = new File(outputFile);
-        OutputStream out = new FileOutputStream(outFile);
-//        PdfOptions options = null;
-//        PdfConverter.getInstance().convert(document, out, options);
     }
 
     private static void readDocFile2() {
@@ -51,18 +39,12 @@ public class CreateParagraph {
                     "321"};
 
             for (XWPFParagraph p : paragraphs) {
-//                System.out.println(p.getText());
-
-//                System.out.println(StringUtils.replaceEach(p.getText(), searchList, replacementList));
 
                 List<XWPFRun> runs = p.getRuns();
                 if (runs != null) {
                     for (XWPFRun r : runs) {
                         String text = r.getText(0);
-//                        r.setText(StringUtils.replaceEach(text, searchList, replacementList), 0);
-//                        if (text != null && text.contains("needle")) {
-//                            text = text.replace("needle", "haystack");
-//                        }
+                        r.setText(StringUtils.replaceEach(text, searchList, replacementList), 0);
                     }
                 }
             }
